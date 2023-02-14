@@ -5,7 +5,7 @@ class ApiProvider {
   final Dio _dio = Dio();
   final apiKey = Constants.apiKeys1;
 
-  callCurrentWeather(String cityName) async {
+  Future<dynamic> callCurrentWeather(String cityName) async {
     var response = await _dio.get(
       '${Constants.baseUrl}/data/2.5/weather',
       queryParameters: {
